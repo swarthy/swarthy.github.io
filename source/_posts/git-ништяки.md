@@ -11,3 +11,5 @@ tags: git
 ```bash
 git rebase -p --onto SHA^ SHA
 ```
+
+{% asset_img "git-1.gif" "GIF animation" %}
