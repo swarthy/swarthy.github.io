@@ -95,6 +95,22 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: next
 
+theme_config:
+  footer:
+    theme:
+      enable: false
+    beian:
+      enable: false
+  social:
+    GitHub: https://github.com/swarthy || github
+  reading_progress:
+    enable: true
+  github_banner:
+    enable: true
+    permalink: https://github.com/swarthy
+    title: Follow me on GitHub
+  google_analytics:
+    tracking_id: UA-72323230-2
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
