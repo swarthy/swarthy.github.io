@@ -106,11 +106,18 @@ theme_config:
   reading_progress:
     enable: true
   github_banner:
-    enable: true
+    enable: false
     permalink: https://github.com/swarthy
     title: Follow me on GitHub
   google_analytics:
     tracking_id: UA-72323230-2
+  avatar:
+    # Replace the default image and set the url here.
+    url: /images/avatar.png
+    # If true, the avatar will be dispalyed in circle.
+    rounded: true
+    # If true, the avatar will be rotated with the cursor.
+    rotated: true
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

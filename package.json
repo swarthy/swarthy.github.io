@@ -6,7 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "newpost": "hexo new post",
+    "cbd": "hexo clean && hexo generate && hexo deploy"
   },
   "hexo": {
     "version": "4.2.0"
