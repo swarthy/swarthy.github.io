@@ -12,4 +12,4 @@ tags: git
 git rebase -p --onto SHA^ SHA
 ```
 
-{% asset_img "git-1.gif" "GIF animation" %}
+{% asset_img "git-rebase--p.gif" "GIF animation" %}
