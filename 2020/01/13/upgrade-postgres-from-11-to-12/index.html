@@ -46,27 +46,32 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Смуглоноты">
-<meta property="og:url" content="https://swarthy.github.io/index.html">
+  <meta name="description" content="Для удобства следует открыть 2 терминала: в одном залогиниться под root, во втором под postgres Устанавливаем 12 версиюroot12apt updateapt install install postgresql-12 postgresql-server-dev-12  Так к">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Обновляем PostgreSQL до 12 версии">
+<meta property="og:url" content="https://swarthy.github.io/2020/01/13/upgrade-postgres-from-11-to-12/index.html">
 <meta property="og:site_name" content="Смуглоноты">
+<meta property="og:description" content="Для удобства следует открыть 2 терминала: в одном залогиниться под root, во втором под postgres Устанавливаем 12 версиюroot12apt updateapt install install postgresql-12 postgresql-server-dev-12  Так к">
 <meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2020-01-13T19:05:54.000Z">
+<meta property="article:modified_time" content="2020-01-13T05:41:07.020Z">
 <meta property="article:author" content="Swarthy">
+<meta property="article:tag" content="administration, postgresql">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://swarthy.github.io/">
+<link rel="canonical" href="https://swarthy.github.io/2020/01/13/upgrade-postgres-from-11-to-12/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Смуглоноты</title>
+  <title>Обновляем PostgreSQL до 12 версии | Смуглоноты</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72323230-2"></script>
     <script>
@@ -172,10 +177,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ru">
     <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/13/upgrade-postgres-from-11-to-12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,8 +194,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/13/upgrade-postgres-from-11-to-12/" class="post-title-link" itemprop="url">Обновляем PostgreSQL до 12 версии</a>
+          Обновляем PostgreSQL до 12 версии
         </h1>
 
         <div class="post-meta">
@@ -215,7 +219,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Для удобства следует открыть 2 терминала: в одном залогиниться под <code>root</code>, во втором под <code>postgres</code></p>
+        <p>Для удобства следует открыть 2 терминала: в одном залогиниться под <code>root</code>, во втором под <code>postgres</code></p>
 <h1 id="Устанавливаем-12-версию"><a href="#Устанавливаем-12-версию" class="headerlink" title="Устанавливаем 12 версию"></a>Устанавливаем 12 версию</h1><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install install postgresql-12 postgresql-server-dev-12</span><br></pre></td></tr></table></figure>
 
 <p>Так как уже установлена 11, в конфигах 12ой будет настроен порт 5433 вместо 5432</p>
@@ -240,91 +244,36 @@
 <p><code>pg_upgrade</code> генерирует delete_old_cluster.sh в <code>pglog</code><br>Если всё прошло успешно, то он вызвался и удалил данные кластера 11 версии, но если что-то пошло не так, придется удалять руками:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># данные</span></span><br><span class="line">rm -rf <span class="string">'/var/lib/postgresql/11/main'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># конфиги (delete_old_cluster не удаляет их)</span></span><br><span class="line">rm -rf <span class="string">'/etc/postgresql/11'</span></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/administration-postgresql/" rel="tag"># administration, postgresql</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
-    <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Swarthy">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Смуглоноты">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/" class="post-title-link" itemprop="url">git ништяки</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Размещено</span>
-
-              <time title="Создано: 2020-01-10 20:03:43" itemprop="dateCreated datePublished" datetime="2020-01-10T20:03:43+00:00">2020-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-01-13 05:41:07" itemprop="dateModified" datetime="2020-01-13T05:41:07+00:00">2020-01-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Удаление"><a href="#Удаление" class="headerlink" title="Удаление"></a>Удаление</h2><h3 id="коммита-из-истории"><a href="#коммита-из-истории" class="headerlink" title="коммита из истории"></a>коммита из истории</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -p --onto SHA^ SHA</span><br></pre></td></tr></table></figure>
-
-<img src="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/git-rebase--p.gif" class="" title="GIF animation">
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/" rel="prev" title="git ништяки">
+      <i class="fa fa-chevron-left"></i> git ништяки
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -375,6 +324,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Устанавливаем-12-версию"><span class="nav-number">1.</span> <span class="nav-text">Устанавливаем 12 версию</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Переносим-настройки"><span class="nav-number">2.</span> <span class="nav-text">Переносим настройки</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Останавливаем-сервис"><span class="nav-number">3.</span> <span class="nav-text">Останавливаем сервис</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Переносим-данные"><span class="nav-number">4.</span> <span class="nav-text">Переносим данные</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Создаем-папку-с-доступом-для-postgres"><span class="nav-number">4.1.</span> <span class="nav-text">Создаем папку с доступом для postgres</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Проверка-не-изменяет-данные-см-–check"><span class="nav-number">4.2.</span> <span class="nav-text">Проверка (не изменяет данные, см –check)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Миграция"><span class="nav-number">4.3.</span> <span class="nav-text">Миграция</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Запускаем-сервис"><span class="nav-number">5.</span> <span class="nav-text">Запускаем сервис</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Убеждаемся-что-всё-работает"><span class="nav-number">6.</span> <span class="nav-text">Убеждаемся, что всё работает</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Удаляем-11-версию"><span class="nav-number">7.</span> <span class="nav-text">Удаляем 11 версию</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
