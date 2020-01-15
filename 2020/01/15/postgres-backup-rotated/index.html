@@ -46,27 +46,31 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Смуглоноты">
-<meta property="og:url" content="https://swarthy.github.io/index.html">
+  <meta name="description" content="Слегка модифицированный скрипт для бэкапа.  chmod 600 added   pg_backup_rotated.sh  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgreSQL rotated backup bash script">
+<meta property="og:url" content="https://swarthy.github.io/2020/01/15/postgres-backup-rotated/index.html">
 <meta property="og:site_name" content="Смуглоноты">
+<meta property="og:description" content="Слегка модифицированный скрипт для бэкапа.  chmod 600 added   pg_backup_rotated.sh  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626">
 <meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2020-01-15T11:44:02.000Z">
+<meta property="article:modified_time" content="2020-01-15T07:19:35.349Z">
 <meta property="article:author" content="Swarthy">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://swarthy.github.io/">
+<link rel="canonical" href="https://swarthy.github.io/2020/01/15/postgres-backup-rotated/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>Смуглоноты</title>
+  <title>PostgreSQL rotated backup bash script | Смуглоноты</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72323230-2"></script>
     <script>
@@ -172,10 +176,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ru">
     <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/15/postgres-backup-rotated/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,8 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/15/postgres-backup-rotated/" class="post-title-link" itemprop="url">PostgreSQL rotated backup bash script</a>
+          PostgreSQL rotated backup bash script
         </h1>
 
         <div class="post-meta">
@@ -215,7 +218,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Слегка модифицированный <a href="https://wiki.postgresql.org/wiki/Automated_Backup_on_Linux" target="_blank" rel="noopener">скрипт</a> для бэкапа.</p>
+        <p>Слегка модифицированный <a href="https://wiki.postgresql.org/wiki/Automated_Backup_on_Linux" target="_blank" rel="noopener">скрипт</a> для бэкапа.</p>
 <ul>
 <li>chmod 600 added</li>
 </ul>
@@ -226,179 +229,33 @@
 
 </details>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
-    <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/13/upgrade-postgres-from-11-to-12/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Swarthy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Смуглоноты">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/13/upgrade-postgres-from-11-to-12/" class="post-title-link" itemprop="url">Обновляем PostgreSQL до 12 версии</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Размещено</span>
-
-              <time title="Создано: 2020-01-13 19:05:54" itemprop="dateCreated datePublished" datetime="2020-01-13T19:05:54+00:00">2020-01-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-01-15 07:19:35" itemprop="dateModified" datetime="2020-01-15T07:19:35+00:00">2020-01-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Для удобства следует открыть 2 терминала: в одном залогиниться под <code>root</code>, во втором под <code>postgres</code></p>
-<h1 id="Устанавливаем-12-версию"><a href="#Устанавливаем-12-версию" class="headerlink" title="Устанавливаем 12 версию"></a>Устанавливаем 12 версию</h1><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install install postgresql-12 postgresql-server-dev-12</span><br></pre></td></tr></table></figure>
-
-<p>Так как уже установлена 11, в конфигах 12ой будет настроен порт 5433 вместо 5432</p>
-<h1 id="Переносим-настройки"><a href="#Переносим-настройки" class="headerlink" title="Переносим настройки"></a>Переносим настройки</h1><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">diff /etc/postgresql/11/main/postgresql.conf /etc/postgresql/12/main/postgresql.conf</span><br><span class="line">diff /etc/postgresql/11/main/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf</span><br><span class="line"></span><br><span class="line">nano /etc/postgresql/12/main/postgresql.conf</span><br><span class="line"><span class="comment"># обязательно поменять порт с 5433 на 5432</span></span><br><span class="line"></span><br><span class="line">nano /etc/postgresql/12/main/postgresql.conf</span><br><span class="line"><span class="comment"># обязательно поменять порт с 5432 на 5431, например</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Останавливаем-сервис"><a href="#Останавливаем-сервис" class="headerlink" title="Останавливаем сервис"></a>Останавливаем сервис</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop postgresql.service</span><br></pre></td></tr></table></figure>
-
-<h1 id="Переносим-данные"><a href="#Переносим-данные" class="headerlink" title="Переносим данные"></a>Переносим данные</h1><p><code>pg_upgrade</code> запускаем от имени пользователя <code>postgres</code>, также <code>postgres</code> должен иметь права на запись в cwd</p>
-<h2 id="Создаем-папку-с-доступом-для-postgres"><a href="#Создаем-папку-с-доступом-для-postgres" class="headerlink" title="Создаем папку с доступом для postgres"></a>Создаем папку с доступом для postgres</h2><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir pglog</span><br><span class="line">chown postgres:postgres pglog</span><br></pre></td></tr></table></figure>
-
-<h2 id="Проверка-не-изменяет-данные-см-–check"><a href="#Проверка-не-изменяет-данные-см-–check" class="headerlink" title="Проверка (не изменяет данные, см –check)"></a>Проверка (не изменяет данные, см –check)</h2><figure class="highlight bash"><figcaption><span>postgres</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> pglog</span><br><span class="line">/usr/lib/postgresql/12/bin/pg_upgrade \</span><br><span class="line">  --old-datadir=/var/lib/postgresql/11/main \</span><br><span class="line">  --new-datadir=/var/lib/postgresql/12/main \</span><br><span class="line">  --old-bindir=/usr/lib/postgresql/11/bin \</span><br><span class="line">  --new-bindir=/usr/lib/postgresql/12/bin \</span><br><span class="line">  --old-options <span class="string">'-c config_file=/etc/postgresql/11/main/postgresql.conf'</span> \</span><br><span class="line">  --new-options <span class="string">'-c config_file=/etc/postgresql/12/main/postgresql.conf'</span> \</span><br><span class="line">  --check</span><br></pre></td></tr></table></figure>
-
-<h2 id="Миграция"><a href="#Миграция" class="headerlink" title="Миграция"></a>Миграция</h2><p>Может занять некоторое время (для 10гб базы минут 10), но все равно быстрее чем pg_dump + psql</p>
-<figure class="highlight bash"><figcaption><span>postgres</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/postgresql/12/bin/pg_upgrade \</span><br><span class="line">  --old-datadir=/var/lib/postgresql/11/main \</span><br><span class="line">  --new-datadir=/var/lib/postgresql/12/main \</span><br><span class="line">  --old-bindir=/usr/lib/postgresql/11/bin \</span><br><span class="line">  --new-bindir=/usr/lib/postgresql/12/bin \</span><br><span class="line">  --old-options <span class="string">'-c config_file=/etc/postgresql/11/main/postgresql.conf'</span> \</span><br><span class="line">  --new-options <span class="string">'-c config_file=/etc/postgresql/12/main/postgresql.conf'</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Запускаем-сервис"><a href="#Запускаем-сервис" class="headerlink" title="Запускаем сервис"></a>Запускаем сервис</h1><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start postgresql.service</span><br></pre></td></tr></table></figure>
-
-<h1 id="Убеждаемся-что-всё-работает"><a href="#Убеждаемся-что-всё-работает" class="headerlink" title="Убеждаемся, что всё работает"></a>Убеждаемся, что всё работает</h1><figure class="highlight bash"><figcaption><span>postgres</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -c <span class="string">"SELECT version();"</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Удаляем-11-версию"><a href="#Удаляем-11-версию" class="headerlink" title="Удаляем 11 версию"></a>Удаляем 11 версию</h1><figure class="highlight bash"><figcaption><span>root</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt list --installed | grep postgresql</span><br><span class="line">apt remove postgresql-11 postgresql-server-dev-11 postgresql-client-11</span><br></pre></td></tr></table></figure>
-
-<p><code>pg_upgrade</code> генерирует delete_old_cluster.sh в <code>pglog</code><br>Если всё прошло успешно, то он вызвался и удалил данные кластера 11 версии, но если что-то пошло не так, придется удалять руками:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># данные</span></span><br><span class="line">rm -rf <span class="string">'/var/lib/postgresql/11/main'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># конфиги (delete_old_cluster не удаляет их)</span></span><br><span class="line">rm -rf <span class="string">'/etc/postgresql/11'</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
-    <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Swarthy">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Смуглоноты">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/" class="post-title-link" itemprop="url">git ништяки</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Размещено</span>
-
-              <time title="Создано: 2020-01-10 20:03:43" itemprop="dateCreated datePublished" datetime="2020-01-10T20:03:43+00:00">2020-01-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-01-15 07:19:35" itemprop="dateModified" datetime="2020-01-15T07:19:35+00:00">2020-01-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Удаление"><a href="#Удаление" class="headerlink" title="Удаление"></a>Удаление</h2><h3 id="коммита-из-истории"><a href="#коммита-из-истории" class="headerlink" title="коммита из истории"></a>коммита из истории</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -p --onto SHA^ SHA</span><br></pre></td></tr></table></figure>
-
-<img src="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/git-rebase--p.gif" class="" title="GIF animation">
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/13/upgrade-postgres-from-11-to-12/" rel="prev" title="Обновляем PostgreSQL до 12 версии">
+      <i class="fa fa-chevron-left"></i> Обновляем PostgreSQL до 12 версии
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
