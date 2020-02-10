@@ -46,15 +46,20 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Смуглоноты">
-<meta property="og:url" content="https://swarthy.github.io/archives/2020/01/index.html">
+  <meta name="description" content="Для случая, когда сертификаты обновляются методом webroot и необходимо вручную перезагрузить конфиг nginx’а. &#x2F;etc&#x2F;letsencrypt&#x2F;renewal-hooks&#x2F;deploy&#x2F;nginx 12345#!&#x2F;bin&#x2F;shDATE&#x3D;&#96;date &#39;+%Y-%m-%d %H:%M:%S&#39;&#96;e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="certbot renew hooks">
+<meta property="og:url" content="https://swarthy.github.io/2020/02/10/certbot/index.html">
 <meta property="og:site_name" content="Смуглоноты">
+<meta property="og:description" content="Для случая, когда сертификаты обновляются методом webroot и необходимо вручную перезагрузить конфиг nginx’а. &#x2F;etc&#x2F;letsencrypt&#x2F;renewal-hooks&#x2F;deploy&#x2F;nginx 12345#!&#x2F;bin&#x2F;shDATE&#x3D;&#96;date &#39;+%Y-%m-%d %H:%M:%S&#39;&#96;e">
 <meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2020-02-10T14:31:07.000Z">
+<meta property="article:modified_time" content="2020-02-10T09:41:35.464Z">
 <meta property="article:author" content="Swarthy">
+<meta property="article:tag" content="administration certbot">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://swarthy.github.io/archives/2020/01/">
+<link rel="canonical" href="https://swarthy.github.io/2020/02/10/certbot/">
 
 
 <script id="page-configurations">
@@ -62,11 +67,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>Архив | Смуглоноты</title>
+  <title>certbot renew hooks | Смуглоноты</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72323230-2"></script>
     <script>
@@ -171,89 +176,88 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Эм..! 4 записей всего. Продолжаю писать.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="ru">
+    <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/02/10/certbot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Swarthy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Смуглоноты">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          certbot renew hooks
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Размещено</span>
+              
+
+              <time title="Создано: 2020-02-10 14:31:07 / Изменено: 09:41:35" itemprop="dateCreated datePublished" datetime="2020-02-10T14:31:07+00:00">2020-02-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p>Для случая, когда сертификаты обновляются методом webroot и необходимо вручную перезагрузить конфиг nginx’а.</p>
+<p><code>/etc/letsencrypt/renewal-hooks/deploy/nginx</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">DATE=`date <span class="string">'+%Y-%m-%d %H:%M:%S'</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span> <span class="string">"Deploy hook ran."</span> &gt;&gt; /var/<span class="built_in">log</span>/certbot-renew.log</span><br><span class="line"></span><br><span class="line">/bin/systemctl reload nginx &gt;&gt; /var/<span class="built_in">log</span>/certbot-renew.log</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-15T11:44:02+00:00"
-              content="2020-01-15">
-          01-15
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/15/postgres-backup-rotated/" itemprop="url">
-            <span itemprop="name">PostgreSQL rotated backup bash script</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-13T19:05:54+00:00"
-              content="2020-01-13">
-          01-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/13/upgrade-postgres-from-11-to-12/" itemprop="url">
-            <span itemprop="name">Обновляем PostgreSQL до 12 версии</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-10T20:03:43+00:00"
-              content="2020-01-10">
-          01-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/10/git-%D0%BD%D0%B8%D1%88%D1%82%D1%8F%D0%BA%D0%B8/" itemprop="url">
-            <span itemprop="name">git ништяки</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<blockquote>
+<p>Важно!</p>
+<p>Не трогай /etc/cron.d/certbot, он не работает, когда в системе запущен systemd</p>
+</blockquote>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/administration-certbot/" rel="tag"># administration certbot</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/15/postgres-backup-rotated/" rel="prev" title="PostgreSQL rotated backup bash script">
+      <i class="fa fa-chevron-left"></i> PostgreSQL rotated backup bash script
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>

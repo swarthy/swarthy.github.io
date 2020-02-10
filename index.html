@@ -176,6 +176,72 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
+    <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/02/10/certbot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Swarthy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Смуглоноты">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/10/certbot/" class="post-title-link" itemprop="url">certbot renew hooks</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Размещено</span>
+              
+
+              <time title="Создано: 2020-02-10 14:31:07 / Изменено: 09:41:35" itemprop="dateCreated datePublished" datetime="2020-02-10T14:31:07+00:00">2020-02-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Для случая, когда сертификаты обновляются методом webroot и необходимо вручную перезагрузить конфиг nginx’а.</p>
+<p><code>/etc/letsencrypt/renewal-hooks/deploy/nginx</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">DATE=`date <span class="string">'+%Y-%m-%d %H:%M:%S'</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$DATE</span> <span class="string">"Deploy hook ran."</span> &gt;&gt; /var/<span class="built_in">log</span>/certbot-renew.log</span><br><span class="line"></span><br><span class="line">/bin/systemctl reload nginx &gt;&gt; /var/<span class="built_in">log</span>/certbot-renew.log</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Важно!</p>
+<p>Не трогай /etc/cron.d/certbot, он не работает, когда в системе запущен systemd</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="ru">
     <link itemprop="mainEntityOfPage" href="https://swarthy.github.io/2020/01/15/postgres-backup-rotated/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -207,7 +273,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-02-10 06:07:09" itemprop="dateModified" datetime="2020-02-10T06:07:09+00:00">2020-02-10</time>
+                <time title="Изменено: 2020-02-10 09:41:35" itemprop="dateModified" datetime="2020-02-10T09:41:35+00:00">2020-02-10</time>
               </span>
 
           
@@ -282,7 +348,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-02-10 06:07:09" itemprop="dateModified" datetime="2020-02-10T06:07:09+00:00">2020-02-10</time>
+                <time title="Изменено: 2020-02-10 09:41:35" itemprop="dateModified" datetime="2020-02-10T09:41:35+00:00">2020-02-10</time>
               </span>
 
           
@@ -370,7 +436,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Изменено</span>
-                <time title="Изменено: 2020-02-10 06:07:09" itemprop="dateModified" datetime="2020-02-10T06:07:09+00:00">2020-02-10</time>
+                <time title="Изменено: 2020-02-10 09:41:35" itemprop="dateModified" datetime="2020-02-10T09:41:35+00:00">2020-02-10</time>
               </span>
 
           
@@ -471,12 +537,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">Архив</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">Тэги</span>
       </div>
   </nav>
