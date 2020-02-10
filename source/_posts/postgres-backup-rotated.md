@@ -6,7 +6,8 @@ tags:
 
 Слегка модифицированный [скрипт](https://wiki.postgresql.org/wiki/Automated_Backup_on_Linux) для бэкапа.
 
-- chmod 600 added
+- chmod 640 added
+- chown postgres:backupuser added
 
 <details>
 <summary>pg_backup_rotated.sh</summary>
@@ -97,7 +98,8 @@ function perform_backups()
                 echo "[!!ERROR!!] Failed to produce globals backup" 1>&2
         else
                 mv $FINAL_BACKUP_DIR"globals".sql.gz.in_progress $FINAL_BACKUP_DIR"globals".sql.gz
-                chmod 600 $FINAL_BACKUP_DIR"globals".sql.gz
+                chown postgres:backupuser $FINAL_BACKUP_DIR"globals".sql.gz
+                chmod 640 $FINAL_BACKUP_DIR"globals".sql.gz
         fi
   else
     echo "None"
@@ -130,7 +132,8 @@ function perform_backups()
                   echo "[!!ERROR!!] Failed to backup database schema of $DATABASE" 1>&2
           else
                   mv $FINAL_BACKUP_DIR"$DATABASE"_SCHEMA.sql.gz.in_progress $FINAL_BACKUP_DIR"$DATABASE"_SCHEMA.sql.gz
-                  chmod 600 $FINAL_BACKUP_DIR"$DATABASE"_SCHEMA.sql.gz
+                  chown postgres:backupuser $FINAL_BACKUP_DIR"$DATABASE"_SCHEMA.sql.gz
+                  chmod 640 $FINAL_BACKUP_DIR"$DATABASE"_SCHEMA.sql.gz
           fi
   done
 
@@ -159,7 +162,8 @@ function perform_backups()
         echo "[!!ERROR!!] Failed to produce plain backup database $DATABASE" 1>&2
       else
         mv $FINAL_BACKUP_DIR"$DATABASE".sql.gz.in_progress $FINAL_BACKUP_DIR"$DATABASE".sql.gz
-        chmod 600 $FINAL_BACKUP_DIR"$DATABASE".sql.gz
+        chown postgres:backupuser $FINAL_BACKUP_DIR"$DATABASE".sql.gz
+        chmod 640 $FINAL_BACKUP_DIR"$DATABASE".sql.gz
       fi
     fi
 
@@ -171,7 +175,8 @@ function perform_backups()
         echo "[!!ERROR!!] Failed to produce custom backup database $DATABASE"
       else
         mv $FINAL_BACKUP_DIR"$DATABASE".custom.in_progress $FINAL_BACKUP_DIR"$DATABASE".custom
-        chmod 600 $FINAL_BACKUP_DIR"$DATABASE".custom
+        chown postgres:backupuser $FINAL_BACKUP_DIR"$DATABASE".custom
+        chmod 640 $FINAL_BACKUP_DIR"$DATABASE".custom
       fi
     fi
 
