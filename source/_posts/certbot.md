@@ -31,6 +31,6 @@ echo $DATE "Deploy hook ran." >> /var/log/certbot-renew.log
         rotate 12
         compress
         notifempty
-	      su root root
+        su root root
 }
 ```
